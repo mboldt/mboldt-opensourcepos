@@ -22,6 +22,13 @@ if (isset($error_message))
 		<?php
 		}
 		?>
+		<?php if(isset($comment))
+		{
+		?>
+			<div id="comment"><?php echo $this->lang->line('sales_comments').": ".$comment; ?></div>
+		<?php
+		}
+		?>
 		<div id="sale_id"><?php echo $this->lang->line('sales_id').": ".$sale_id; ?></div>
 		<div id="employee"><?php echo $this->lang->line('employees_employee').": ".$employee; ?></div>
 	</div>
