@@ -88,7 +88,7 @@ if (isset($error_message))
 	{ ?>
 		<tr>
 		<td colspan="2" style="text-align:right;"><?php echo $this->lang->line('sales_payment'); ?></td>
-		<td colspan="2" style="text-align:right;"><?php $splitpayment=explode(':',$payment['payment_type']); echo $splitpayment[0]; ?> </td>
+		<td colspan="2" style="text-align:right;"><?php $splitpayment=explode(':',$payment['payment_type']); echo $splitpayment[0] . ' ' . $payment['payment_details']; ?> </td>
 		<td colspan="2" style="text-align:right"><?php echo to_currency( $payment['payment_amount'] * -1 ); ?>  </td>
 	    </tr>
 	<?php

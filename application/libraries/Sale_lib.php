@@ -66,13 +66,14 @@ class Sale_lib
 		$this->CI->session->unset_userdata('email_receipt');
 	}
 
-	function add_payment($payment_id,$payment_amount)
+	function add_payment($payment_id,$payment_amount,$payment_details)
 	{
 		$payments=$this->get_payments();
 		$payment = array($payment_id=>
 		array(
 			'payment_type'=>$payment_id,
-			'payment_amount'=>$payment_amount
+			'payment_amount'=>$payment_amount,
+			'payment_details'=>$payment_details
 			)
 		);
 
@@ -381,7 +382,7 @@ class Sale_lib
 		}
 		foreach($this->CI->Sale->get_sale_payments($sale_id)->result() as $row)
 		{
-			$this->add_payment($row->payment_type,$row->payment_amount);
+			$this->add_payment($row->payment_type,$row->payment_amount,$row->payment_details);
 		}
 		$this->set_customer($this->CI->Sale->get_customer($sale_id)->person_id);
 
@@ -398,7 +399,7 @@ class Sale_lib
 		}
 		foreach($this->CI->Sale_suspended->get_sale_payments($sale_id)->result() as $row)
 		{
-			$this->add_payment($row->payment_type,$row->payment_amount);
+			$this->add_payment($row->payment_type,$row->payment_amount,$row->payment_details);
 		}
 		$this->set_customer($this->CI->Sale_suspended->get_customer($sale_id)->person_id);
 		$this->set_comment($this->CI->Sale_suspended->get_comment($sale_id));

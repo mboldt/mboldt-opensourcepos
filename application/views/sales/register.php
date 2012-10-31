@@ -303,6 +303,14 @@ else
 				<?php echo form_input( array( 'name'=>'amount_tendered', 'id'=>'amount_tendered', 'value'=>to_currency_no_money($amount_due), 'size'=>'10' ) );	?>
 			</td>
 			</tr>
+			<tr>
+			<td>
+				<span><?php echo $this->lang->line( 'sales_payment_details' ).': '; ?></span>
+			</td>
+			<td>
+				<?php echo form_input( array( 'name'=>'payment_details', 'id'=>'payment_details', 'size'=>'10' ) );	?>
+			</td>
+			</tr>
         	</table>
 			<div class='small_button' id='add_payment_button' style='float:left;margin-top:5px;'>
 				<span><?php echo $this->lang->line('sales_add_payment'); ?></span>

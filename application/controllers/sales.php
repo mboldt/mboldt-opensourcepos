@@ -67,6 +67,7 @@ class Sales extends Secure_area
  			return;
 		}
 		
+		$payment_details=$this->input->post('payment_details');
 		$payment_type=$this->input->post('payment_type');
 		if ( $payment_type == $this->lang->line('sales_giftcard') )
 		{
@@ -91,7 +92,7 @@ class Sales extends Secure_area
 			$payment_amount=$this->input->post('amount_tendered');
 		}
 		
-		if( !$this->sale_lib->add_payment( $payment_type, $payment_amount ) )
+		if( !$this->sale_lib->add_payment( $payment_type, $payment_amount, $payment_details ) )
 		{
 			$data['error']='Unable to Add Payment! Please try again!';
 		}

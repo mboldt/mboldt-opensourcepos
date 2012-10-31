@@ -65,7 +65,8 @@ class Sale_suspended extends CI_Model
 			(
 				'sale_id'=>$sale_id,
 				'payment_type'=>$payment['payment_type'],
-				'payment_amount'=>$payment['payment_amount']
+				'payment_amount'=>$payment['payment_amount'],
+				'payment_details'=>$payment['payment_details']
 			);
 			$this->db->insert('sales_suspended_payments',$sales_payments_data);
 		}

@@ -76,4 +76,5 @@ $lang['sales_unsuspend_and_delete'] = 'Unsuspend and Delete';
 $lang['sales_unsuspend'] = 'Unsuspend';
 $lang['sales_successfully_suspended_sale'] = 'Your sale has been successfully suspended';
 $lang['sales_email_receipt'] = 'E-Mail Receipt';
+$lang['sales_payment_details'] = 'Payment Details';
 ?>
