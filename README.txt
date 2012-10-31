@@ -3,6 +3,7 @@ I've found the [[http://sourceforge.net/projects/opensourcepos/][opernsourcepos]
 
 * What has changed?
 - Sales comments appear on the receipt.
+- New Payment Details field (e.g. for last 4 digits of credit card or check number). Prints on receipt.
 
 * What changes are coming?
-- Add field for last 4 digits of credit card to help reconcile receipt to payment received.
+
