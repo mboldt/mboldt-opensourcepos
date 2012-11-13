@@ -10,7 +10,20 @@
 		<?php if(isset($customer))
 		{
 		?>
-			<div id="customer"><?php echo $this->lang->line('customers_customer').": ".$customer; ?></div>
+			<div id="customer">
+				<?php echo $this->lang->line('customers_customer').":"; ?>
+				<?php echo "<br />".$customer; ?>
+				<?php if ($cust_info->address_1) { echo "<br />".$cust_info->address_1; } ?>
+				<?php if ($cust_info->address_2) { echo "<br />".$cust_info->address_2; } ?>
+				<?php if ($cust_info->address_2) { echo "<br />".$cust_info->address_2; } ?>
+				<?php if ($cust_info->city || $cust_info->state || $cust_info->zip) { echo "<br />"; } ?>
+				<?php if ($cust_info->city) { echo $cust_info->city; } ?>
+				<?php if ($cust_info->state) { echo $cust_info->state; } ?>
+				<?php if ($cust_info->zip) { echo $cust_info->zip; } ?>
+				<?php if ($cust_info->country) { echo "<br />".$cust_info->country; } ?>
+				<?php if ($cust_info->phone_number) { echo "<br />".$cust_info->phone_number; } ?>
+				<?php if ($cust_info->email) { echo "<br />".$cust_info->email; } ?>
+			</div>
 		<?php
 		}
 		?>
