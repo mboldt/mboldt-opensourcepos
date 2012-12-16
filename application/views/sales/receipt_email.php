@@ -1,3 +1,5 @@
+<html>
+<body>
 <div id="receipt_wrapper">
 	<div id="receipt_header">
 		<div id="company_name"><?php echo $this->config->item('company'); ?></div>
@@ -46,7 +48,7 @@
 	?>
 		<tr>
 		<td><?php echo $item['item_number']; ?></td>
-		<td><span class='long_name'><?php echo $item['name']; ?></span><span class='short_name'><?php echo character_limiter($item['name'],10); ?></span></td>
+		<td><span class='long_name'><?php echo $item['name']; ?></span><!-- <span class='short_name'><?php echo character_limiter($item['name'],10); ?></span> --></td>
 		<td><?php echo to_currency($item['price']); ?></td>
 		<td style='text-align:center;'><?php echo $item['quantity']; ?></td>
 		<td style='text-align:center;'><?php echo $item['discount']; ?></td>
@@ -106,3 +108,5 @@
 	<?php echo nl2br($this->config->item('return_policy')); ?>
 	</div>
 </div>
+</body>
+</html>
