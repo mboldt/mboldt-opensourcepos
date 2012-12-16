@@ -213,13 +213,32 @@ class Sales extends Secure_area
 			{
 				$this->load->library('email');
 				$config['mailtype'] = 'html';				
-				$this->email->initialize($config);
+				/* $this->email->initialize($config); */
 				$this->email->from($this->config->item('email'), $this->config->item('company'));
 				$this->email->to($cust_info->email); 
 
 				$this->email->subject($this->lang->line('sales_receipt'));
 				$this->email->message($this->load->view("sales/receipt_email",$data, true));	
-				$this->email->send();
+				if (!$this->email->send()) {
+					echo "<p class=\"error_message\">Failed emailing receipt to " . $cust_info->email . ". Please resend manually.</p>";
+					log_message('error', "Failed emailing receipt:\n" .  $this->email->print_debugger());
+                                }
+			}
+
+			if ($this->config->item('email_after_sale'))
+			{
+				$this->load->library('email');
+				$config['mailtype'] = 'html';
+				/* $this->email->initialize($config); */
+				$this->email->from($this->config->item('email'), $this->config->item('company'));
+				$this->email->to($this->config->item('email_after_sale'));
+
+				$this->email->subject($this->lang->line('sales_sale'));
+				$this->email->message($this->load->view("sales/receipt_email",$data, true));
+				if (!$this->email->send()) {
+					echo "<p class=\"error_message\">Failed emailing receipt to " . $this->config->item('email_after_sale') . ". Please resend manually.</p>";
+					log_message('error', "Failed emailing receipt:\n" .  $this->email->print_debugger());
+                                }
 			}
 		}
 		$this->load->view("sales/receipt",$data);

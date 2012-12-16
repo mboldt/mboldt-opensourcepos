@@ -250,6 +250,16 @@ echo form_open('config/save/',array('id'=>'config_form'));
 	</div>
 </div>
 
+<div class="field_row clearfix">	
+<?php echo form_label($this->lang->line('config_email_after_sale').':', 'email_after_sale',array('class'=>'wide')); ?>
+	<div class='form_field'>
+	<?php echo form_input(array(
+		'name'=>'email_after_sale',
+		'id'=>'email_after_sale',
+		'value'=>$this->config->item('email_after_sale')));?>
+	</div>
+</div>
+
 
 <?php 
 echo form_submit(array(
@@ -302,6 +312,7 @@ $(document).ready(function()
     			number:true
     		},
     		email:"email",
+    		email_after_sale_address:"email",
     		return_policy: "required"    		
    		},
 		messages: 
@@ -315,6 +326,7 @@ $(document).ready(function()
     			number:"<?php echo $this->lang->line('config_default_tax_rate_number'); ?>"
     		},
      		email: "<?php echo $this->lang->line('common_email_invalid_format'); ?>",
+     		email_after_sale_address: "<?php echo $this->lang->line('common_email_invalid_format'); ?>",
      		return_policy:"<?php echo $this->lang->line('config_return_policy_required'); ?>"
 	
 		}

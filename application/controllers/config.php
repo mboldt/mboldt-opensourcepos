@@ -19,6 +19,7 @@ class Config extends Secure_area
 		'address'=>$this->input->post('address'),
 		'phone'=>$this->input->post('phone'),
 		'email'=>$this->input->post('email'),
+		'email_after_sale'=>$this->input->post('email_after_sale'),
 		'fax'=>$this->input->post('fax'),
 		'website'=>$this->input->post('website'),
 		'default_tax_1_rate'=>$this->input->post('default_tax_1_rate'),		

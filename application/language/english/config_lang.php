@@ -18,6 +18,7 @@ $lang['config_saved_successfully']='Configuration saved successfully';
 $lang['config_saved_unsuccessfully']='Configuration saved unsuccessfully';
 $lang['config_return_policy_required']='Return policy is a required field';
 $lang['config_print_after_sale']='Print receipt after sale';
+$lang['config_email_after_sale']='Email receipt after sale';
 $lang['config_language'] = 'Language';
 $lang['config_timezone'] = 'Timezone';
 $lang['config_currency_symbol'] = 'Currency Symbol';
