@@ -1,2 +1,4 @@
 application/config/database.php
 *~
+application/logs/log-*
+application/config/email.php
